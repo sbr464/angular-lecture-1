@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.container
+		h1 Angular Demo
+
+		div(ng-controller='myController')
+			h1 Hello {{name | pigLatin}}
+			h2 Favorite color is {{user.color}}
+			input.form-control(type='text', placeholder='Name...', ng-model='name')
+			p
+			button.btn(ng-click='printName()') Print Name
+
+		div(ng-controller='dataController')
+			p {{factory.message | pigLatin}}
+			p {{service.message}}
+
